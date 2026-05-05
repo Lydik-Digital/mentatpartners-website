@@ -27,6 +27,11 @@ img{max-width:100%;display:block}
 .nav-links a:hover{color:var(--charcoal);background:var(--cream);opacity:1}
 .nav-links a.ext{color:var(--amber)}
 .lbtn{font-size:13px;font-weight:600;color:var(--grey-light);background:var(--cream);border:none;padding:5px 12px;border-radius:6px;cursor:pointer}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--charcoal);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* HERO */
 .hero{position:relative;overflow:hidden;min-height:560px;display:flex;align-items:center;background:linear-gradient(135deg,var(--cream),var(--cream-dark) 50%,#e2d9ce)}
@@ -154,7 +159,7 @@ img{max-width:100%;display:block}
 .foot-in{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--grey-light)}
 .fu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.fu.vis{opacity:1;transform:translateY(0)}
 
-@media(max-width:1000px){.hero-c{max-width:100%;padding:56px 0}.hero-img,.shero-img{display:none}.hero{min-height:auto}.hero h1{font-size:34px}.jgrid,.plgrid{grid-template-columns:1fr}.frow{grid-template-columns:1fr;gap:36px}.dgrid{grid-template-columns:1fr}.ditem.sf{max-width:100%}.lvbar,.prins{grid-template-columns:1fr 1fr}.pgrid,.tgrid{grid-template-columns:1fr 1fr}.nav-links{display:none}.intro-boxes{grid-template-columns:1fr!important}}
+@media(max-width:1000px){.hero-c{max-width:100%;padding:56px 0}.hero-img,.shero-img{display:none}.hero{min-height:auto}.hero h1{font-size:34px}.jgrid,.plgrid{grid-template-columns:1fr}.frow{grid-template-columns:1fr;gap:36px}.dgrid{grid-template-columns:1fr}.ditem.sf{max-width:100%}.lvbar,.prins{grid-template-columns:1fr 1fr}.pgrid,.tgrid{grid-template-columns:1fr 1fr}.hamburger{display:flex}.nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;flex-direction:column;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 20px;gap:4px;box-shadow:0 4px 16px rgba(0,0,0,.06)}.nav-links.open{display:flex}.nav-links a{padding:12px 14px;font-size:16px}.intro-boxes{grid-template-columns:1fr!important}}
 @media(max-width:600px){.ctr{padding:0 20px}.hero h1{font-size:28px}.stit{font-size:28px}.cform{grid-template-columns:1fr}.cform .full{grid-column:1}.pgrid,.tgrid{grid-template-columns:1fr}}
 [data-lang="fr"]{display:none!important}
 [data-lang="nl"]{display:none!important}
@@ -187,11 +192,12 @@ body.fr .hero-img .img-en{display:none}body.fr .hero-img .img-fr{display:block}.
 
 <nav class="nav"><div class="nav-in">
 <div class="nav-logo" onclick="goHome()"><img src="img/MP_Logo_Only_Trans.png" alt="MP"><span>Mentat Partners</span></div>
+<button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 <div class="nav-links">
-<a href="#hero" onclick="goHome()">Home</a>
-<a href="#team" onclick="goHome()"><span data-lang="en">Team</span><span data-lang="fr">Équipe</span><span data-lang="nl">Team</span></a>
-<a href="#contact" onclick="goHome()">Contact</a>
-<a href="#" class="ext" onclick="showStandard(event)"><span data-lang="en">The standard ↗</span><span data-lang="fr">Le standard ↗</span><span data-lang="nl">De standaard ↗</span></a>
+<a href="#hero" onclick="goHome();closeMenu()">Home</a>
+<a href="#team" onclick="goHome();closeMenu()"><span data-lang="en">Team</span><span data-lang="fr">Équipe</span><span data-lang="nl">Team</span></a>
+<a href="#contact" onclick="goHome();closeMenu()">Contact</a>
+<a href="#" class="ext" onclick="showStandard(event);closeMenu()"><span data-lang="en">The standard ↗</span><span data-lang="fr">Le standard ↗</span><span data-lang="nl">De standaard ↗</span></a>
 </div>
 <button class="lbtn" onclick="toggleLang()">EN | FR | NL</button>
 </div></nav>
@@ -559,6 +565,8 @@ body.fr .hero-img .img-en{display:none}body.fr .hero-img .img-fr{display:block}.
 <footer class="foot"><div class="ctr"><div class="foot-in"><span>© 2026 Mentat Partners · HR Bridge Consulting · AI People Corp</span><span data-lang="en">London · Paris · Amsterdam</span><span data-lang="fr">Londres · Paris · Amsterdam</span><span data-lang="nl">Londen · Parijs · Amsterdam</span></div></div></footer>
 
 <script>
+function toggleMenu(){var b=document.querySelector('.hamburger'),n=document.querySelector('.nav-links');b.classList.toggle('open');n.classList.toggle('open')}
+function closeMenu(){var b=document.querySelector('.hamburger'),n=document.querySelector('.nav-links');b.classList.remove('open');n.classList.remove('open')}
 function toggleLang(){var b=document.body,btn=document.querySelector('.lbtn');if(b.classList.contains('nl')){b.classList.remove('nl');btn.textContent='EN | FR | NL'}else if(b.classList.contains('fr')){b.classList.remove('fr');b.classList.add('nl');btn.textContent='NL | EN | FR'}else{b.classList.add('fr');btn.textContent='FR | NL | EN'}}
 function showStandard(e){if(e)e.preventDefault();document.getElementById('hp').classList.add('hidden');document.getElementById('sp').classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
 function goHome(e){if(e)e.preventDefault();document.getElementById('hp').classList.remove('hidden');document.getElementById('sp').classList.remove('active');if(e)window.scrollTo({top:0,behavior:'smooth'})}
