@@ -18,7 +18,7 @@ img{max-width:100%;display:block}
 
 /* NAV */
 .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:.5px solid var(--border)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);max-width:var(--max-w);margin:0 auto;padding:0 40px}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);max-width:var(--max-w);margin:0 auto;padding:0 40px;position:relative}
 .nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
 .nav-logo img{height:30px}
 .nav-logo span{font-weight:700;font-size:18px;color:var(--amber)}
@@ -27,7 +27,7 @@ img{max-width:100%;display:block}
 .nav-links a:hover{color:var(--charcoal);background:var(--cream);opacity:1}
 .nav-links a.ext{color:var(--amber)}
 .lbtn{font-size:13px;font-weight:600;color:var(--grey-light);background:var(--cream);border:none;padding:5px 12px;border-radius:6px;cursor:pointer}
-.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;z-index:110}
 .hamburger span{display:block;width:22px;height:2px;background:var(--charcoal);border-radius:2px;transition:all .3s}
 .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.open span:nth-child(2){opacity:0}
@@ -159,8 +159,8 @@ img{max-width:100%;display:block}
 .foot-in{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--grey-light)}
 .fu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.fu.vis{opacity:1;transform:translateY(0)}
 
-@media(max-width:1000px){.hero-c{max-width:100%;padding:56px 0}.hero-img,.shero-img{display:none}.hero{min-height:auto}.hero h1{font-size:34px}.jgrid,.plgrid{grid-template-columns:1fr}.frow{grid-template-columns:1fr;gap:36px}.dgrid{grid-template-columns:1fr}.ditem.sf{max-width:100%}.lvbar,.prins{grid-template-columns:1fr 1fr}.pgrid,.tgrid{grid-template-columns:1fr 1fr}.hamburger{display:flex}.nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;flex-direction:column;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 20px;gap:4px;box-shadow:0 4px 16px rgba(0,0,0,.06)}.nav-links.open{display:flex}.nav-links a{padding:12px 14px;font-size:16px}.intro-boxes{grid-template-columns:1fr!important}}
-@media(max-width:600px){.ctr{padding:0 20px}.hero h1{font-size:28px}.stit{font-size:28px}.cform{grid-template-columns:1fr}.cform .full{grid-column:1}.pgrid,.tgrid{grid-template-columns:1fr}}
+@media(max-width:1000px){.hero-c{max-width:100%;padding:56px 0}.hero-img{position:relative;right:auto;width:100%;height:200px;margin-top:-20px}.hero-img img{mask-image:none;-webkit-mask-image:none}.shero-img{display:none}.hero{min-height:auto;flex-direction:column}.hero>.ctr{width:100%}.hero h1{font-size:34px}.jgrid,.plgrid{grid-template-columns:1fr}.frow{grid-template-columns:1fr;gap:36px}.dgrid{grid-template-columns:1fr}.ditem.sf{max-width:100%}.lvbar,.prins{grid-template-columns:1fr 1fr}.pgrid,.tgrid{grid-template-columns:1fr 1fr}.hamburger{display:flex}.nav-links{display:none!important;position:absolute;top:var(--nav-h);left:0;right:0;flex-direction:column;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 20px;gap:4px;box-shadow:0 4px 16px rgba(0,0,0,.06);z-index:105}.nav-links.open{display:flex!important}.nav-links a{padding:12px 14px;font-size:16px}.aipc{flex-direction:column;text-align:center}.aipc img{width:32px;margin:0 auto}.intro-boxes{grid-template-columns:1fr!important}}
+@media(max-width:600px){.ctr{padding:0 20px}.hero h1{font-size:28px}.stit{font-size:28px}.cform{grid-template-columns:1fr}.cform .full{grid-column:1}.pgrid,.tgrid{grid-template-columns:1fr}.hero-img{height:160px}}
 [data-lang="fr"]{display:none!important}
 [data-lang="nl"]{display:none!important}
 body.fr [data-lang="en"]{display:none!important}
@@ -205,7 +205,7 @@ body.fr .hero-img .img-en{display:none}body.fr .hero-img .img-fr{display:block}.
 <main class="hp" id="hp">
 
 <!-- HERO -->
-<section class="hero" id="hero"><div class="ctr" style="display:flex;align-items:center;width:100%;position:relative">
+<section class="hero" id="hero"><div class="ctr hero-ctr" style="display:flex;align-items:center;width:100%;position:relative">
 <div class="hero-c">
 <div class="hero-tag" data-lang="en">AI transformation advisory</div>
 <div class="hero-tag" data-lang="fr">Conseil en transformation IA</div>
