@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentat Partners | Take control of your AI transformation</title>
+<meta name="description" content="Mentat Partners helps leadership teams take control of their AI transformation.">
+<link rel="icon" type="image/png" href="img/MP_Logo_Only_Trans.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--amber:#B07020;--amber-light:#C8893A;--amber-dark:#8A5718;--amber-bg:#FAEEDA;--amber-bg-light:#FDF6EC;--cream:#FAF7F2;--cream-dark:#F0EBE3;--charcoal:#2C2C2A;--grey:#6B6B68;--grey-light:#9A9A96;--border:#E8E4DE;--white:#FFFFFF;--l1:#FAEEDA;--l2:#FAC775;--l3:#EF9F27;--l4:#B07020;--font:'Nunito Sans',-apple-system,sans-serif;--max-w:1280px;--nav-h:64px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{font-family:var(--font);color:var(--charcoal);background:var(--white);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--amber);text-decoration:none;transition:opacity .2s}a:hover{opacity:.8}
+img{max-width:100%;display:block}
+.ctr{max-width:var(--max-w);margin:0 auto;padding:0 40px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:.5px solid var(--border)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);max-width:var(--max-w);margin:0 auto;padding:0 40px}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
+.nav-logo img{height:30px}
+.nav-logo span{font-weight:700;font-size:18px;color:var(--amber)}
+.nav-links{display:flex;align-items:center;gap:8px}
+.nav-links a{font-size:14px;font-weight:600;color:var(--grey);padding:6px 14px;border-radius:8px;transition:all .2s}
+.nav-links a:hover{color:var(--charcoal);background:var(--cream);opacity:1}
+.nav-links a.ext{color:var(--amber)}
+.lbtn{font-size:13px;font-weight:600;color:var(--grey-light);background:var(--cream);border:none;padding:5px 12px;border-radius:6px;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;min-height:560px;display:flex;align-items:center;background:linear-gradient(135deg,var(--cream),var(--cream-dark) 50%,#e2d9ce)}
+.hero-c{position:relative;z-index:2;max-width:50%;padding:80px 0}
+.hero-tag{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+.hero h1{font-size:46px;font-weight:800;line-height:1.08;color:var(--charcoal);margin-bottom:10px;letter-spacing:-.5px}
+.hero .sub{font-size:22px;font-weight:600;color:var(--amber-dark);margin-bottom:20px}
+.hero p{font-size:17px;color:var(--grey);line-height:1.7;margin-bottom:28px}
+.hero-img{position:absolute;right:-20px;top:0;bottom:0;width:55%}
+.hero-img img{height:100%;width:100%;object-fit:cover;mask-image:linear-gradient(to right,transparent 0%,black 20%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 20%)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;font-family:var(--font);font-size:15px;font-weight:700;border-radius:10px;border:none;cursor:pointer;transition:all .25s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(176,112,32,.2)}
+.btn-p{background:var(--amber);color:#fff}.btn-p:hover{background:var(--amber-light);opacity:1}
+.btn-g{background:transparent;color:var(--amber);border:1.5px solid var(--amber);padding:12px 28px}.btn-g:hover{background:var(--amber-bg-light);opacity:1}
+.hbtns{display:flex;gap:14px;flex-wrap:wrap}
+
+/* SECTIONS */
+.sec{padding:88px 0}.sec-a{background:var(--cream)}
+.stag{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
+.stit{font-size:36px;font-weight:800;line-height:1.12;margin-bottom:12px;letter-spacing:-.3px}
+.sdsc{font-size:18px;color:var(--grey);margin-bottom:44px;max-width:700px;line-height:1.7}
+
+/* PAIN POINTS */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+.pcard{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px 24px;transition:all .3s}
+.pcard:hover{border-color:var(--amber);box-shadow:0 4px 20px rgba(176,112,32,.06)}
+.pcard .ps{font-size:32px;font-weight:800;color:var(--amber);margin-bottom:6px}
+.pcard .pt{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.3}
+.pcard .pd{font-size:14px;color:var(--grey);line-height:1.6}
+.pquote{font-size:20px;font-weight:600;color:var(--amber-dark);text-align:center;max-width:700px;margin:0 auto;padding:32px 0;line-height:1.5;font-style:italic;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+/* JOURNEY */
+.jgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.jcard{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:32px 28px;transition:all .3s}
+.jcard:hover{border-color:var(--amber);transform:translateY(-3px);box-shadow:0 8px 30px rgba(176,112,32,.08)}
+.jcard .jn{font-size:22px;font-weight:800;color:var(--amber);margin-bottom:4px}
+.jcard .jq{font-size:15px;color:var(--grey-light);font-style:italic;margin-bottom:14px}
+.jcard .jd{font-size:15px;color:var(--grey);line-height:1.7;margin-bottom:14px}
+.jcard .jr{font-size:13px;color:var(--amber-dark);font-weight:600;line-height:1.5}
+.cphrase{text-align:center;padding:48px 20px}
+.cphrase blockquote{font-size:22px;font-weight:700;color:var(--amber-dark);max-width:640px;margin:0 auto;line-height:1.4}
+
+/* PILLARS */
+.plgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:52px}
+.plcard{border-left:4px solid var(--amber);padding:28px;background:var(--white);border-radius:0 14px 14px 0}
+.plcard .plt{font-size:12px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.plcard .pln{font-size:20px;font-weight:700;margin-bottom:10px}
+.plcard .pld{font-size:15px;color:var(--grey);line-height:1.7}
+
+/* RADAR */
+.rwrap{background:var(--white);border-radius:16px;border:1px solid var(--border);padding:44px;text-align:center;max-width:600px;margin:0 auto 36px}
+.rlbl{font-size:16px;font-weight:700;margin-bottom:6px}
+.rslbl{font-size:14px;color:var(--grey);margin-bottom:20px}
+.rnote{font-size:13px;color:var(--grey-light);margin-top:16px}
+
+/* AIPC */
+.aipc{display:flex;align-items:center;gap:20px;background:var(--amber-bg-light);border:1px solid var(--amber-bg);border-radius:14px;padding:24px 28px;max-width:760px;margin:0 auto}
+.aipc img{width:40px;flex-shrink:0}
+.aipc p{font-size:15px;color:var(--grey);line-height:1.6}
+.aipc strong{color:var(--amber);font-weight:700}
+
+/* FOUNDERS */
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:44px}
+.founder{text-align:center}
+.fimg{width:100%;aspect-ratio:16/10;border-radius:16px;overflow:hidden;margin-bottom:20px}
+.fimg img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.founder:hover .fimg img{transform:scale(1.02)}
+.frole{font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px}
+.fname{font-size:26px;font-weight:800;margin-bottom:12px}
+.fdesc{font-size:15px;color:var(--grey);line-height:1.7;max-width:440px;margin:0 auto;text-align:left}
+.ftog{font-size:17px;color:var(--charcoal);line-height:1.7;max-width:760px;margin:0 auto 56px;text-align:center}
+.ftog strong{color:var(--amber-dark)}
+
+/* TEAM */
+.tintro{font-size:16px;color:var(--grey);line-height:1.7;max-width:720px;margin:0 auto 36px;text-align:center}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:44px}
+.tmem{text-align:center}
+.timg{width:96px;height:96px;border-radius:50%;overflow:hidden;margin:0 auto 12px;border:3px solid var(--border)}
+.timg img{width:100%;height:100%;object-fit:cover}
+.timg.ph{display:flex;align-items:center;justify-content:center;background:var(--cream);font-size:20px;font-weight:700;color:var(--grey-light)}
+.tn{font-size:15px;font-weight:700;margin-bottom:4px}
+.ts{font-size:13px;color:var(--grey-light);margin-bottom:6px}
+.tb{font-size:13px;color:var(--grey);line-height:1.5;max-width:220px;margin:0 auto}
+
+.wtm{font-size:16px;color:var(--grey);line-height:1.7;max-width:760px;margin:0 auto 40px;text-align:center}
+.prins{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.prin{text-align:center;padding:24px 16px;background:var(--cream);border-radius:12px}
+.prin .prl{font-size:12px;color:var(--grey-light);font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.prin .prv{font-size:16px;font-weight:800}
+
+/* CONTACT */
+.cwrap{text-align:center;background:var(--cream);border-radius:20px;padding:64px 48px;max-width:700px;margin:0 auto}
+.cwrap h2{font-size:30px;font-weight:800;margin-bottom:10px}
+.cwrap>p{font-size:17px;color:var(--grey);margin-bottom:12px;line-height:1.7}
+.cform{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:480px;margin:24px auto}
+.cform input,.cform textarea{font-family:var(--font);font-size:14px;padding:13px 18px;border:1px solid var(--border);border-radius:8px;background:var(--white);color:var(--charcoal);outline:none;transition:border-color .2s}
+.cform input:focus,.cform textarea:focus{border-color:var(--amber)}
+.cform .full{grid-column:1/-1}
+.cform textarea{resize:vertical;min-height:70px}
+.ceml{font-size:14px;color:var(--grey);margin-top:20px;line-height:1.8}
+.cloc{font-size:14px;color:var(--grey-light);margin-top:16px;font-weight:600}
+
+/* STANDARD PAGE */
+.sp{display:none}.sp.active{display:block}
+.hp.hidden{display:none}
+.shero{position:relative;overflow:hidden;min-height:320px;display:flex;align-items:center;background:linear-gradient(135deg,var(--cream),var(--cream-dark) 60%,#e2d9ce)}
+.shero-c{position:relative;z-index:2;max-width:55%;padding:64px 0}
+.shero-img{position:absolute;right:0;top:0;bottom:0;width:50%;display:flex;align-items:center;justify-content:center}
+.shero-img img{max-width:100%;height:auto}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:52px}
+.ditem{display:flex;align-items:flex-start;gap:16px;padding:24px;border-radius:14px;background:var(--white);border:1px solid var(--border);transition:border-color .2s}
+.ditem:hover{border-color:var(--amber)}
+.dnum{width:36px;height:36px;border-radius:50%;background:var(--amber);color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dtxt strong{display:block;font-size:17px;font-weight:700;margin-bottom:6px}
+.dtxt span{font-size:15px;color:var(--grey);line-height:1.6}
+.ditem.sf{grid-column:1/-1;max-width:100%}
+.lvbar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:52px}
+.lv{padding:24px 18px;border-radius:12px;text-align:center}
+.lv .lvn{font-size:12px;font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px}
+.lv .lvt{font-size:18px;font-weight:800;margin-bottom:6px}
+.lv .lvd{font-size:13px;line-height:1.5;opacity:.85}
+.lv1{background:var(--l1);color:#633806}.lv2{background:var(--l2);color:#412402}.lv3{background:var(--l3);color:#412402}.lv4{background:var(--l4);color:#fff}
+
+.foot{border-top:.5px solid var(--border);padding:28px 0}
+.foot-in{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--grey-light)}
+.fu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.fu.vis{opacity:1;transform:translateY(0)}
+
+@media(max-width:1000px){.hero-c{max-width:100%;padding:56px 0}.hero-img,.shero-img{display:none}.hero{min-height:auto}.hero h1{font-size:34px}.jgrid,.plgrid{grid-template-columns:1fr}.frow{grid-template-columns:1fr;gap:36px}.dgrid{grid-template-columns:1fr}.ditem.sf{max-width:100%}.lvbar,.prins{grid-template-columns:1fr 1fr}.pgrid,.tgrid{grid-template-columns:1fr 1fr}.nav-links{display:none}.intro-boxes{grid-template-columns:1fr!important}}
+@media(max-width:600px){.ctr{padding:0 20px}.hero h1{font-size:28px}.stit{font-size:28px}.cform{grid-template-columns:1fr}.cform .full{grid-column:1}.pgrid,.tgrid{grid-template-columns:1fr}}
+[data-lang="fr"]{display:none!important}
+[data-lang="nl"]{display:none!important}
+body.fr [data-lang="en"]{display:none!important}
+body.fr [data-lang="nl"]{display:none!important}
+body.fr div[data-lang="fr"]{display:block!important}
+body.fr span[data-lang="fr"]{display:inline!important}
+body.fr p[data-lang="fr"]{display:block!important}
+body.fr a[data-lang="fr"]{display:inline-flex!important}
+body.fr button[data-lang="fr"]{display:inline-flex!important}
+body.fr h1[data-lang="fr"]{display:block!important}
+body.fr h2[data-lang="fr"]{display:block!important}
+body.fr blockquote[data-lang="fr"]{display:block!important}
+body.fr strong[data-lang="fr"]{display:block!important}
+body.nl [data-lang="en"]{display:none!important}
+body.nl [data-lang="fr"]{display:none!important}
+body.nl div[data-lang="nl"]{display:block!important}
+body.nl span[data-lang="nl"]{display:inline!important}
+body.nl p[data-lang="nl"]{display:block!important}
+body.nl a[data-lang="nl"]{display:inline-flex!important}
+body.nl button[data-lang="nl"]{display:inline-flex!important}
+body.nl h1[data-lang="nl"]{display:block!important}
+body.nl h2[data-lang="nl"]{display:block!important}
+body.nl blockquote[data-lang="nl"]{display:block!important}
+body.nl strong[data-lang="nl"]{display:block!important}
+body.fr .hero-img .img-en{display:none}body.fr .hero-img .img-fr{display:block}.hero-img .img-fr{display:none}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-in">
+<div class="nav-logo" onclick="goHome()"><img src="img/MP_Logo_Only_Trans.png" alt="MP"><span>Mentat Partners</span></div>
+<div class="nav-links">
+<a href="#hero" onclick="goHome()">Home</a>
+<a href="#team" onclick="goHome()"><span data-lang="en">Team</span><span data-lang="fr">Équipe</span><span data-lang="nl">Team</span></a>
+<a href="#contact" onclick="goHome()">Contact</a>
+<a href="#" class="ext" onclick="showStandard(event)"><span data-lang="en">The standard ↗</span><span data-lang="fr">Le standard ↗</span><span data-lang="nl">De standaard ↗</span></a>
+</div>
+<button class="lbtn" onclick="toggleLang()">EN | FR | NL</button>
+</div></nav>
+
+<main class="hp" id="hp">
+
+<!-- HERO -->
+<section class="hero" id="hero"><div class="ctr" style="display:flex;align-items:center;width:100%;position:relative">
+<div class="hero-c">
+<div class="hero-tag" data-lang="en">AI transformation advisory</div>
+<div class="hero-tag" data-lang="fr">Conseil en transformation IA</div>
+<div class="hero-tag" data-lang="nl">AI-transformatie advies</div>
+<h1 data-lang="en">Take control of your AI transformation.</h1>
+<h1 data-lang="fr">Prenez le contrôle de votre transformation IA.</h1>
+<h1 data-lang="nl">Neem de controle over uw AI-transformatie.</h1>
+<div class="sub" data-lang="en">The best AI transformation is the one that comes from within.</div>
+<div class="sub" data-lang="fr">La meilleure transformation IA est celle qui vient de l'intérieur.</div>
+<div class="sub" data-lang="nl">De beste AI-transformatie is die van binnenuit komt.</div>
+<p data-lang="en">We help organisations succeed with AI by addressing what others overlook: the human side. Leadership alignment, governance, workforce readiness, skills development, ethics. These are the dimensions that turn AI investment into real value. Mentat Partners guides leadership teams through every one of them.</p>
+<p data-lang="fr">Nous aidons les organisations à réussir avec l'IA en adressant ce que les autres négligent : la dimension humaine. Alignement du leadership, gouvernance, préparation des équipes, développement des compétences, éthique. Ce sont ces dimensions qui transforment l'investissement IA en vraie valeur. Mentat Partners guide les équipes de direction sur chacune d'entre elles.</p>
+<p data-lang="nl">Wij helpen organisaties te slagen met AI door aan te pakken wat anderen over het hoofd zien: de menselijke kant. Leiderschap, governance, medewerkersgereedheid, competentieontwikkeling, ethiek. Dit zijn de dimensies die AI-investeringen omzetten in echte waarde. Mentat Partners begeleidt directieteams op elk van deze gebieden.</p>
+<div class="hbtns">
+<a href="#contact" class="btn btn-p" data-lang="en">Start with a conversation</a>
+<a href="#contact" class="btn btn-p" data-lang="fr">Commençons par une conversation</a>
+<a href="#contact" class="btn btn-p" data-lang="nl">Laten we een gesprek beginnen</a>
+<a href="#journey" class="btn btn-g" data-lang="en">Our offers</a>
+<a href="#journey" class="btn btn-g" data-lang="fr">Nos offres</a>
+<a href="#journey" class="btn btn-g" data-lang="nl">Ons aanbod</a>
+</div>
+</div>
+</div>
+<div class="hero-img">
+<img class="img-en" src="img/MP_Board_Image1.png" alt="Mentat Partners">
+<img class="img-fr" src="img/MP_Board_Image1.png" alt="Mentat Partners">
+</div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="sec sec-a" id="pain"><div class="ctr">
+<div class="fu">
+<div class="stag" data-lang="en">The challenge</div><div class="stag" data-lang="fr">Le défi</div><div class="stag" data-lang="nl">De uitdaging</div>
+<div class="stit" data-lang="en">AI transformation is failing. Because organisations don't invest in the human dimension.</div>
+<div class="stit" data-lang="fr">La transformation IA échoue. Parce que les organisations n'investissent pas dans la dimension humaine.</div>
+<div class="stit" data-lang="nl">AI-transformatie mislukt. Omdat organisaties niet investeren in de menselijke dimensie.</div>
+<div class="sdsc" data-lang="en">The technology works. The tools exist. But organisations pour 95% of their AI budget into platforms and almost nothing into the leadership, governance, skills, and change management that determine whether those platforms deliver value. The human dimension is the missing investment.</div>
+<div class="sdsc" data-lang="fr">La technologie fonctionne. Les outils existent. Mais les organisations consacrent 95% de leur budget IA aux plateformes et presque rien au leadership, à la gouvernance, aux compétences et à la conduite du changement qui déterminent si ces plateformes créent de la valeur. La dimension humaine est l'investissement manquant.</div>
+<div class="sdsc" data-lang="nl">De technologie werkt. De tools bestaan. Maar organisaties besteden 95% van hun AI-budget aan platforms en bijna niets aan het leiderschap, de governance, de competenties en het verandermanagement die bepalen of die platforms waarde creëren. De menselijke dimensie is de ontbrekende investering.</div>
+</div>
+<div class="pgrid fu">
+<div class="pcard">
+<div class="ps">80%</div>
+<div class="pt" data-lang="en">of AI projects fail to deliver expected value</div>
+<div class="pt" data-lang="fr">des projets IA n'atteignent pas la valeur attendue</div>
+<div class="pt" data-lang="nl">van AI-projecten levert niet de verwachte waarde</div>
+<div class="pd" data-lang="en">Not because the technology doesn't work. Because leadership isn't aligned, the workforce isn't ready, and governance doesn't exist.</div>
+<div class="pd" data-lang="fr">Pas parce que la technologie ne fonctionne pas. Parce que la direction n'est pas alignée, les équipes ne sont pas prêtes, et la gouvernance n'existe pas.</div>
+<div class="pd" data-lang="nl">Niet omdat de technologie niet werkt. Omdat het leiderschap niet is afgestemd, de medewerkers niet klaar zijn, en de governance ontbreekt.</div>
+</div>
+<div class="pcard">
+<div class="ps">95 / 5</div>
+<div class="pt" data-lang="en">The value gap: 95% on technology, 5% on people</div>
+<div class="pt" data-lang="fr">L'écart de valeur : 95% technologie, 5% humain</div>
+<div class="pt" data-lang="nl">De waardekloof: 95% technologie, 5% mens</div>
+<div class="pd" data-lang="en">AI budgets flow to platforms and tools. Almost nothing goes to leadership, skills, change management, and governance that make those platforms useful.</div>
+<div class="pd" data-lang="fr">Les budgets IA vont aux plateformes et outils. Presque rien ne va au leadership, aux compétences, à la conduite du changement et à la gouvernance qui rendent ces plateformes utiles.</div>
+<div class="pd" data-lang="nl">AI-budgetten gaan naar platforms en tools. Bijna niets gaat naar leiderschap, competenties, verandermanagement en governance die deze platforms nuttig maken.</div>
+</div>
+<div class="pcard">
+<div class="ps">Shadow AI</div>
+<div class="pt" data-lang="en">Your teams didn't wait for permission</div>
+<div class="pt" data-lang="fr">Vos équipes n'ont pas attendu votre feu vert</div>
+<div class="pt" data-lang="nl">Uw teams hebben niet op toestemming gewacht</div>
+<div class="pd" data-lang="en">Employees are already using ChatGPT, Claude, Copilot, uploading client data, financial documents, strategic information into systems you don't control. Without governance. Without your knowledge.</div>
+<div class="pd" data-lang="fr">Les collaborateurs utilisent déjà ChatGPT, Claude, Copilot, y téléchargent des données clients, des documents financiers, des informations stratégiques dans des systèmes que vous ne contrôlez pas. Sans gouvernance. Sans que vous le sachiez.</div>
+<div class="pd" data-lang="nl">Medewerkers gebruiken al ChatGPT, Claude, Copilot, uploaden klantgegevens, financiële documenten en strategische informatie naar systemen die u niet beheert. Zonder governance. Zonder dat u het weet.</div>
+</div>
+</div>
+<div class="pquote fu">
+<span data-lang="en">"We don't sell technology. We prepare leaders to steer it."</span>
+<span data-lang="fr">« Nous ne vendons pas de technologie. Nous préparons les dirigeants à la piloter. »</span>
+<span data-lang="nl">"Wij verkopen geen technologie. Wij bereiden leiders voor om het te sturen."</span>
+</div>
+</div></section>
+
+<!-- OFFERS -->
+<section class="sec" id="journey"><div class="ctr">
+<div class="fu">
+<div class="stag" data-lang="en">What we offer</div><div class="stag" data-lang="fr">Ce que nous proposons</div><div class="stag" data-lang="nl">Wat wij bieden</div>
+<div class="stit" data-lang="en">Four ways to engage with us. Choose what you need.</div>
+<div class="stit" data-lang="fr">Quatre façons de travailler avec nous. Choisissez ce dont vous avez besoin.</div>
+<div class="stit" data-lang="nl">Vier manieren om met ons samen te werken. Kies wat u nodig heeft.</div>
+<div class="sdsc" data-lang="en">Whether you are just starting to think about AI or already deploying it, we help you at the stage that matters most right now. Each offer is self-contained with clear deliverables. You don't commit to a programme. You commit to a result.</div>
+<div class="sdsc" data-lang="fr">Que vous commenciez tout juste à réfléchir à l'IA ou que vous soyez déjà en phase de déploiement, nous vous accompagnons à l'étape qui compte le plus pour vous maintenant. Chaque offre est autonome avec des livrables concrets. Vous ne vous engagez pas dans un programme. Vous vous engagez sur un résultat.</div>
+<div class="sdsc" data-lang="nl">Of u nu net begint na te denken over AI of al in de implementatiefase bent, wij ondersteunen u in de stap die er nu het meest toe doet. Elk aanbod is zelfstandig met concrete resultaten. U verbindt zich niet aan een programma. U verbindt zich aan een resultaat.</div>
+</div>
+<div class="jgrid fu">
+<div class="jcard"><div class="jn" data-lang="en">Discover: Open Your Eyes to AI</div><div class="jn" data-lang="fr">Découvrir : Ouvrez les yeux sur l'IA</div><div class="jn" data-lang="nl">Ontdekken: Open uw ogen voor AI</div>
+<div data-lang="en"><div class="jq"><em>What you're buying: a wake-up call.</em></div><div class="jd">A half-day with two senior experts who will show your leadership team what they haven't seen, correct what they believe wrongly, and map the AI landscape relevant to your industry. You leave with clarity, not confusion.</div><div class="jr"><strong>What you receive:</strong> A Blind-Spot Report with priority recommendations. An AI Landscape Brief tailored to your sector.</div></div>
+<div data-lang="fr"><div class="jq"><em>Ce que vous achetez : un électrochoc.</em></div><div class="jd">Une demi-journée avec deux experts seniors qui montreront à votre équipe de direction ce qu'elle n'a pas vu, corrigeront ce qu'elle croit à tort, et cartographieront le paysage IA pertinent pour votre secteur. Vous en sortez avec de la clarté, pas de la confusion.</div><div class="jr"><strong>Ce que vous recevez :</strong> Un rapport d'angles morts avec des recommandations prioritaires. Un brief du paysage IA adapté à votre secteur.</div></div>
+
+<div data-lang="nl"><div class="jq"><em>Wat u koopt: een wake-up call.</em></div><div class="jd">Een halve dag met twee senior experts die uw directieteam laten zien wat zij niet hebben gezien, corrigeren wat zij ten onrechte geloven, en het AI-landschap in kaart brengen dat relevant is voor uw sector. U vertrekt met helderheid, niet met verwarring.</div><div class="jr"><strong>Wat u ontvangt:</strong> Een Blind Spot-rapport met prioriteitsaanbevelingen. Een AI-landschapsbrief op maat van uw sector.</div></div>
+</div>
+<div class="jcard"><div class="jn" data-lang="en">Define: Know Where You Stand</div><div class="jn" data-lang="fr">Définir : Sachez où vous en êtes</div><div class="jn" data-lang="nl">Definiëren: Weet waar u staat</div>
+<div data-lang="en"><div class="jq"><em>What you're buying: clarity and a roadmap.</em></div><div class="jd">Our AI Readiness Assessment measures your organisation across seven dimensions and four maturity levels. The result is an honest maturity profile that shows your strengths, your gaps, and your dangerous asymmetries. We also help you navigate the AI solution landscape and build a board-ready business case.</div><div class="jr"><strong>What you receive:</strong> A Maturity Profile Report. A visual maturity profile. A priority roadmap. An AI opportunity map.</div></div>
+<div data-lang="fr"><div class="jq"><em>Ce que vous achetez : de la clarté et une feuille de route.</em></div><div class="jd">Notre diagnostic de maturité IA mesure votre organisation sur sept dimensions et quatre niveaux de maturité. Le résultat est un profil de maturité honnête qui montre vos forces, vos lacunes et vos asymétries dangereuses. Nous vous aidons aussi à naviguer le paysage des solutions IA et à construire un dossier d'investissement prêt pour le board.</div><div class="jr"><strong>Ce que vous recevez :</strong> Un rapport de profil de maturité. Un profil visuel. Une feuille de route prioritaire. Une cartographie des opportunités IA.</div></div>
+
+<div data-lang="nl"><div class="jq"><em>Wat u koopt: helderheid en een routekaart.</em></div><div class="jd">Onze AI-volwassenheidsbeoordeling meet uw organisatie op zeven dimensies en vier volwassenheidsniveaus. Het resultaat is een eerlijk volwassenheidsprofiel dat uw sterke punten, hiaten en gevaarlijke asymmetrieën toont. Wij helpen u ook het AI-oplossingslandschap te navigeren en een board-ready businesscase op te bouwen.</div><div class="jr"><strong>Wat u ontvangt:</strong> Een volwassenheidsprofielrapport. Een visueel profiel. Een prioriteitsroutekaart. Een AI-kansenkaart.</div></div>
+</div>
+<div class="jcard"><div class="jn" data-lang="en">Deploy: Build It Right, Bring People With You</div><div class="jn" data-lang="fr">Déployer : Construisez bien, embarquez vos équipes</div><div class="jn" data-lang="nl">Implementeren: Bouw het goed, neem uw mensen mee</div>
+<div data-lang="en"><div class="jq"><em>What you're buying: execution.</em></div><div class="jd">You've decided. Now the human side becomes critical. We deliver modular workstreams tailored to your priorities: leadership alignment, governance architecture, social dialogue, workforce sentiment measurement, skills cascade, ethical framework. You choose what you need.</div><div class="jr"><strong>What you receive:</strong> Defined deliverables per workstream, from the AI Agenda Document to the Skills Cascade Programme to the AI Ethics Charter.</div></div>
+<div data-lang="fr"><div class="jq"><em>Ce que vous achetez : l'exécution.</em></div><div class="jd">Vous avez décidé. La dimension humaine devient critique. Nous délivrons des chantiers modulaires adaptés à vos priorités : alignement du leadership, architecture de gouvernance, dialogue social, mesure du sentiment des collaborateurs, cascade de compétences, cadre éthique. Vous choisissez ce dont vous avez besoin.</div><div class="jr"><strong>Ce que vous recevez :</strong> Des livrables définis par chantier, du document d'agenda IA au programme de cascade de compétences à la charte éthique IA.</div></div>
+
+<div data-lang="nl"><div class="jq"><em>Wat u koopt: uitvoering.</em></div><div class="jd">U heeft besloten. De menselijke dimensie wordt cruciaal. Wij leveren modulaire werkstromen op maat van uw prioriteiten: leiderschapsafstemming, governance-architectuur, sociale dialoog, sentimentmeting van medewerkers, competentiecascade, ethisch kader. U kiest wat u nodig heeft.</div><div class="jr"><strong>Wat u ontvangt:</strong> Gedefinieerde leveringen per werkstroom, van het AI-agendadocument tot het competentiecascadeprogramma tot het AI-ethiekcharter.</div></div>
+</div>
+<div class="jcard"><div class="jn" data-lang="en">Develop: Stay on Track, Keep Getting Better</div><div class="jn" data-lang="fr">Pérenniser : Restez sur la bonne voie</div><div class="jn" data-lang="nl">Verduurzamen: Blijf op koers</div>
+<div data-lang="en"><div class="jq"><em>What you're buying: continuity.</em></div><div class="jd">AI is deployed. The question is whether it lasts. We re-measure your seven dimensions on a recurring basis, track your trajectory over time, and brief your leadership on what's working and what needs attention.</div><div class="jr"><strong>What you receive:</strong> Quarterly Trajectory Reports. Workforce Sentiment updates. Executive briefings.</div></div>
+<div data-lang="fr"><div class="jq"><em>Ce que vous achetez : la continuité.</em></div><div class="jd">L'IA est déployée. La question est de savoir si ça dure. Nous remesurons vos sept dimensions de manière récurrente, suivons votre trajectoire dans le temps et briefons votre direction sur ce qui fonctionne et ce qui nécessite attention.</div><div class="jr"><strong>Ce que vous recevez :</strong> Rapports de trajectoire trimestriels. Mises à jour du sentiment collaborateurs. Briefings exécutifs.</div></div>
+
+<div data-lang="nl"><div class="jq"><em>Wat u koopt: continuïteit.</em></div><div class="jd">AI is geïmplementeerd. De vraag is of het standhoudt. Wij hermeten uw zeven dimensies periodiek, volgen uw traject in de tijd en briefen uw directie over wat werkt en wat aandacht nodig heeft.</div><div class="jr"><strong>Wat u ontvangt:</strong> Kwartaalrapportages over het traject. Updates over het medewerkerssentiment. Executive briefings.</div></div>
+</div>
+</div>
+<div class="cphrase fu"><blockquote data-lang="en">"Every engagement is tailored. You choose the scope, the pace, and the depth. We don't sell monolithic programmes. We sell specific results."</blockquote><blockquote data-lang="fr">« Chaque engagement est sur mesure. Vous choisissez le périmètre, le rythme et la profondeur. Nous ne vendons pas de programmes monolithiques. Nous vendons des résultats concrets. »</blockquote><blockquote data-lang="nl">"Elk engagement is op maat. U kiest de reikwijdte, het tempo en de diepte. Wij verkopen geen monolithische programma's. Wij verkopen concrete resultaten."</blockquote></div>
+</div></section>
+
+<!-- METHODOLOGY -->
+<section class="sec sec-a" id="approach"><div class="ctr">
+<div class="fu">
+<div class="stag" data-lang="en">Our methodology</div><div class="stag" data-lang="fr">Notre méthodologie</div><div class="stag" data-lang="nl">Onze methodologie</div>
+<div class="stit" data-lang="en">We work with your teams to build a clear picture, and a concrete plan to move forward.</div>
+<div class="stit" data-lang="fr">Nous travaillons avec vos équipes pour construire une image claire, et un plan concret pour avancer.</div>
+<div class="stit" data-lang="nl">Wij werken met uw teams om een helder beeld te vormen, en een concreet plan om vooruit te komen.</div>
+<div class="sdsc" data-lang="en">We don't arrive with a pre-made diagnosis. We work inside your organisation: interviewing your leadership team, listening to your managers, surveying your workforce, analysing your governance, and mapping your operational reality. We look at your organisation through three angles, because AI integration touches three fundamentally different areas, each requiring different stakeholders, different expertise, and different solutions.</div>
+<div class="sdsc" data-lang="fr">Nous n'arrivons pas avec un diagnostic pré-fabriqué. Nous travaillons à l'intérieur de votre organisation : nous interviewons votre équipe de direction, nous écoutons vos managers, nous sondons vos collaborateurs, nous analysons votre gouvernance, et nous cartographions votre réalité opérationnelle. Nous regardons votre organisation sous trois angles, parce que l'intégration IA touche trois domaines fondamentalement différents, chacun nécessitant des interlocuteurs, une expertise et des solutions différentes.</div>
+<div class="sdsc" data-lang="nl">Wij komen niet met een kant-en-klare diagnose. Wij werken binnen uw organisatie: we interviewen uw directieteam, luisteren naar uw managers, bevragen uw medewerkers, analyseren uw governance en brengen uw operationele realiteit in kaart. Wij bekijken uw organisatie vanuit drie invalshoeken, omdat AI-integratie drie fundamenteel verschillende gebieden raakt, elk met andere gesprekspartners, expertise en oplossingen.</div>
+</div>
+<div class="plgrid fu">
+<div class="plcard">
+<div data-lang="en"><div class="plt">Strategy & Direction</div><div class="pln">The WHY</div><div class="pld">We help your leadership team build a shared AI posture and a credible narrative. We facilitate ExCom sessions where leaders examine how they think about AI, help them collectively own the AI agenda, and create the narrative that answers every employee's question: "What does AI mean for me here?"</div><div class="pld" style="margin-top:12px;color:var(--amber-dark);font-weight:600">We deliver: an AI Agenda Document, a Leadership Posture Assessment, and the foundations of your AI narrative.</div></div>
+<div data-lang="nl"><div class="plt">Strategie & Richting</div><div class="pln">Het WAAROM</div><div class="pld">Wij helpen uw directieteam een gedeelde AI-houding en een geloofwaardig verhaal op te bouwen. Wij begeleiden directiesessies waar leiders onderzoeken hoe zij over AI denken, helpen hen het AI-agenda collectief te omarmen, en creëren het verhaal dat de vraag van elke medewerker beantwoordt: "Wat betekent AI voor mij hier?"</div><div class="pld" style="margin-top:12px;color:var(--amber-dark);font-weight:600">Wij leveren: een AI-Agendadocument, een Leiderschapshouding Beoordeling, en de fundamenten van uw AI-verhaal.</div></div>
+<div data-lang="fr"><div class="plt">Stratégie & Direction</div><div class="pln">Le POURQUOI</div><div class="pld">Nous aidons votre équipe de direction à construire une posture IA partagée et un narratif crédible. Nous animons des sessions CODIR où les dirigeants examinent comment ils pensent l'IA, les aidons à s'approprier collectivement l'agenda IA, et créons le narratif qui répond à la question de chaque collaborateur : « Qu'est-ce que l'IA signifie pour moi ici ? »</div><div class="pld" style="margin-top:12px;color:var(--amber-dark);font-weight:600">Nous délivrons : un Document d'Agenda IA, une Évaluation de la Posture du Leadership, et les fondations de votre narratif IA.</div></div>
+</div>
+<div class="plcard">
+<div data-lang="en"><div class="plt">Organisation & Governance</div><div class="pln">The HOW</div><div class="pld">We build the governance architecture and operational infrastructure that make AI integration safe, legal, and effective. We map your regulatory obligations (EU AI Act, CSE, GDPR), audit shadow AI usage, and work with your COO and CTO together to ensure AI enters operations coherently.</div><div class="pld" style="margin-top:12px;color:var(--amber-dark);font-weight:600">We deliver: a Social Dialogue Plan, an AI Governance Charter, a Shadow AI Audit, and an operational integration roadmap.</div></div>
+<div data-lang="nl"><div class="plt">Organisatie & Governance</div><div class="pln">Het HOE</div><div class="pld">Wij bouwen de governance-architectuur en operationele infrastructuur die AI-integratie veilig, legaal en effectief maken. Wij brengen uw regelgevingsverplichtingen in kaart (EU AI Act, OR, AVG), auditen shadow AI-gebruik, en werken samen met uw COO en CTO om ervoor te zorgen dat AI coherent in de operaties komt.</div><div class="pld" style="margin-top:12px;color:var(--amber-dark);font-weight:600">Wij leveren: een Sociaal Dialoogplan, een AI-Governance Charter, een Shadow AI Audit, en een operationele integratieroutekaart.</div></div>
+<div data-lang="fr"><div class="plt">Organisation & Gouvernance</div><div class="pln">Le COMMENT</div><div class="pld">Nous construisons l'architecture de gouvernance et l'infrastructure opérationnelle qui rendent l'intégration IA sûre, légale et efficace. Nous cartographions vos obligations réglementaires (EU AI Act, CSE, RGPD), auditons le shadow AI, et travaillons avec votre COO et CTO ensemble pour que l'IA entre dans les opérations de manière cohérente.</div><div class="pld" style="margin-top:12px;color:var(--amber-dark);font-weight:600">Nous délivrons : un Plan de Dialogue Social, une Charte de Gouvernance IA, un Audit Shadow AI, et une feuille de route d'intégration opérationnelle.</div></div>
+</div>
+<div class="plcard">
+<div data-lang="en"><div class="plt">People & Culture</div><div class="pln">The WHO</div><div class="pld">We measure how your workforce experiences the AI journey and build the capabilities and ethical framework they need. We deploy dedicated AI sentiment measurement, design a three-layer skills cascade, and facilitate the creation of an ethical framework with real commitments on workforce transition.</div><div class="pld" style="margin-top:12px;color:var(--amber-dark);font-weight:600">We deliver: a Workforce Sentiment Report, a Skills Cascade Programme with AI Champions toolkit, and a living AI Ethics Charter.</div></div>
+<div data-lang="nl"><div class="plt">Mensen & Cultuur</div><div class="pln">Het WIE</div><div class="pld">Wij meten hoe uw medewerkers het AI-traject ervaren en bouwen de capaciteiten en het ethisch kader dat zij nodig hebben. Wij zetten een dedicated AI-sentimentmeting in, ontwerpen een drielaagse competentiecascade, en begeleiden de creatie van een ethisch kader met echte toezeggingen over medewerkerstransitie.</div><div class="pld" style="margin-top:12px;color:var(--amber-dark);font-weight:600">Wij leveren: een Medewerkerssentiment Rapport, een Competentiecascade Programma met AI Champions toolkit, en een levend AI-Ethiek Charter.</div></div>
+<div data-lang="fr"><div class="plt">Personnes & Culture</div><div class="pln">Le QUI</div><div class="pld">Nous mesurons comment vos collaborateurs vivent le parcours IA et construisons les compétences et le cadre éthique dont ils ont besoin. Nous déployons une mesure dédiée du sentiment IA, concevons une cascade de compétences en trois couches, et facilitons la création d'un cadre éthique avec des engagements réels sur la transition.</div><div class="pld" style="margin-top:12px;color:var(--amber-dark);font-weight:600">Nous délivrons : un Rapport de Sentiment, un Programme de Cascade de Compétences avec kit AI Champions, et une Charte Éthique IA vivante.</div></div>
+</div>
+</div>
+
+<!-- BRIDGE: How it comes together -->
+<div class="fu" style="max-width:760px;margin:0 auto 32px">
+<div class="stag" data-lang="en">How it all comes together</div><div class="stag" data-lang="fr">Comment tout s'articule</div><div class="stag" data-lang="nl">Hoe het samenkomt</div>
+<p style="font-size:16px;color:var(--grey);line-height:1.7;margin-bottom:16px" data-lang="en">The three pillars structure what we look at. The seven dimensions are what we measure. The four maturity levels are how we score. The AI Readiness Assessment is the instrument that brings it all together.</p>
+<p style="font-size:16px;color:var(--grey);line-height:1.7;margin-bottom:16px" data-lang="fr">Les trois piliers structurent ce que nous regardons. Les sept dimensions sont ce que nous mesurons. Les quatre niveaux de maturité sont notre système de notation. Le Diagnostic de Maturité IA est l'instrument qui réunit le tout.</p>
+<p style="font-size:16px;color:var(--grey);line-height:1.7;margin-bottom:16px" data-lang="nl">De drie pijlers structureren wat wij bekijken. De zeven dimensies zijn wat wij meten. De vier volwassenheidsniveaus zijn ons scoresysteem. De AI-Volwassenheidsbeoordeling is het instrument dat alles samenbrengt.</p>
+<p style="font-size:16px;color:var(--grey);line-height:1.7" data-lang="en">We interview your ExCom members one-to-one, listen to your function heads, run focus groups with your middle managers, survey a sample of your workforce. We analyse your governance documents, map your operational AI usage, and identify your shadow AI exposure. Every piece of evidence is scored against the seven dimensions at four maturity levels: Awareness, Alignment, Activation, Integration. The result is your maturity profile.</p>
+<p style="font-size:16px;color:var(--grey);line-height:1.7" data-lang="nl">Wij interviewen de leden van uw directieteam individueel, luisteren naar uw functiehoofd, houden focusgroepen met uw managers, bevragen een steekproef van uw medewerkers. Wij analyseren uw governance-documenten, brengen uw operationeel AI-gebruik in kaart, en identificeren uw shadow AI-blootstelling. Elk bewijsstuk wordt gescoord op de zeven dimensies op vier volwassenheidsniveaus: Bewustwording, Afstemming, Activering, Integratie. Het resultaat is uw volwassenheidsprofiel.</p>
+<p style="font-size:16px;color:var(--grey);line-height:1.7" data-lang="fr">Nous interviewons les membres de votre CODIR individuellement, écoutons vos responsables de fonctions, animons des groupes de travail avec vos managers, sondons un échantillon de vos collaborateurs. Nous analysons vos documents de gouvernance, cartographions votre usage opérationnel de l'IA, et identifions votre exposition au shadow AI. Chaque élément de preuve est noté sur les sept dimensions à quatre niveaux de maturité : Prise de conscience, Alignement, Activation, Intégration. Le résultat est votre profil de maturité.</p>
+</div>
+
+<!-- MATURITY PROFILE -->
+<div class="rwrap fu">
+<div class="rlbl" data-lang="en">Your maturity profile: where you stand, and what to do next</div><div class="rlbl" data-lang="fr">Votre profil de maturité : où vous en êtes, et quoi faire ensuite</div>
+<div class="rlbl" data-lang="nl">Uw volwassenheidsprofiel: waar u staat, en wat nu te doen</div>
+<div class="rslbl" data-lang="en">Scored across 7 dimensions × 4 maturity levels</div><div class="rslbl" data-lang="fr">Mesuré sur 7 dimensions × 4 niveaux de maturité</div>
+<div class="rslbl" data-lang="nl">Gescoord op 7 dimensies × 4 volwassenheidsniveaus</div>
+<svg id="rsv" viewBox="0 0 400 340" width="380" style="margin:0 auto;display:block"><g opacity=".3"><polygon id="r4" points="" fill="none" stroke="#B07020" stroke-width=".5"/><polygon id="r3" points="" fill="none" stroke="#B07020" stroke-width=".5"/><polygon id="r2" points="" fill="none" stroke="#B07020" stroke-width=".5"/><polygon id="r1" points="" fill="none" stroke="#B07020" stroke-width=".5"/></g><g id="ax" stroke="#B07020" stroke-width=".3" opacity=".3"></g><polygon id="ds" points="" fill="#B07020" fill-opacity=".15" stroke="#B07020" stroke-width="2"/><g id="dd"></g><g id="rl" font-family="Nunito Sans,sans-serif" font-size="11" font-weight="600" fill="#6B6B68"></g></svg>
+<div class="rnote" data-lang="en">Sample profile. Every client receives their own, with evidence-based scoring and a priority roadmap.</div><div class="rnote" data-lang="fr">Profil exemple. Chaque client reçoit le sien, avec un scoring basé sur les preuves et une feuille de route prioritaire.</div>
+<div class="rnote" data-lang="nl">Voorbeeldprofiel. Elke klant ontvangt het zijne, met een op bewijs gebaseerde scoring en een prioriteitsroutekaart.</div>
+</div>
+
+<!-- FROM DIAGNOSIS TO ACTION -->
+<div class="fu" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px">
+<div style="background:var(--white);border-radius:14px;padding:28px;border:1px solid var(--border)">
+<div style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-lang="en">From diagnosis to action plan</div>
+<div style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-lang="fr">Du diagnostic au plan d'action</div>
+<div style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-lang="nl">Van diagnose naar actieplan</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7" data-lang="en">We don't leave you with a chart. From the maturity profile, we build a priority action plan: which dimensions to address first, which stakeholders to involve, which workstreams to launch, in what order, and with what expected outcomes. The action plan connects directly to our four offers: you see exactly which services address which gaps.</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7" data-lang="nl">Wij laten u niet achter met een grafiek. Vanuit het volwassenheidsprofiel bouwen wij een prioritair actieplan: welke dimensies eerst aanpakken, welke stakeholders betrekken, welke werkstromen lanceren, in welke volgorde, en met welke verwachte resultaten. Het actieplan is direct gekoppeld aan onze vier aanbiedingen: u ziet precies welke diensten welke hiaten aanpakken.</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7" data-lang="fr">Nous ne vous laissons pas avec un graphique. À partir du profil de maturité, nous construisons un plan d'action prioritaire : quelles dimensions adresser en premier, quels interlocuteurs impliquer, quels chantiers lancer, dans quel ordre, et avec quels résultats attendus. Le plan d'action se connecte directement à nos quatre offres : vous voyez exactement quels services adressent quelles lacunes.</div>
+</div>
+<div style="background:var(--white);border-radius:14px;padding:28px;border:1px solid var(--border)">
+<div style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-lang="en">From action plan to measured progress</div>
+<div style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-lang="fr">Du plan d'action au progrès mesuré</div>
+<div style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-lang="nl">Van actieplan naar gemeten voortgang</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7" data-lang="en">The profile is also your baseline. When we re-assess six or twelve months later, you see precisely where you have progressed, where you have stalled, and where new priorities have emerged. The transformation becomes visible, measurable, and accountable.</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7" data-lang="nl">Het profiel is ook uw nulmeting. Wanneer wij zes of twaalf maanden later opnieuw beoordelen, ziet u precies waar u vooruitgang heeft geboekt, waar u bent gestagneerd, en waar nieuwe prioriteiten zijn ontstaan. De transformatie wordt zichtbaar, meetbaar en verantwoordelijk.</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7" data-lang="fr">Le profil est aussi votre point de départ. Quand nous réévaluons six ou douze mois plus tard, vous voyez précisément où vous avez progressé, où vous avez stagné, et où de nouvelles priorités ont émergé. La transformation devient visible, mesurable et responsabilisante.</div>
+</div>
+</div>
+
+<div class="aipc fu"><img src="img/MP_Logo_Only_Trans.png" alt="AIPC"><div><p data-lang="en">Built on <strong>AI People Corp</strong>, the first independent standard for human-centred AI integration. We didn't adopt it. We created it. Because no one else had. <a href="#" onclick="showStandard(event)">Explore the standard ↗</a></p><p data-lang="nl">Gebouwd op <strong>AI People Corp</strong>, de eerste onafhankelijke standaard voor mensgerichte AI-integratie. Wij hebben het niet overgenomen. Wij hebben het gecreëerd. Omdat niemand anders dat had gedaan. <a href="#" onclick="showStandard(event)">Ontdek de standaard ↗</a></p><p data-lang="fr">Fondé sur <strong>AI People Corp</strong>, le premier standard indépendant pour l'intégration humaine de l'IA. Nous ne l'avons pas adopté. Nous l'avons créé. Parce que personne d'autre ne l'avait fait. <a href="#" onclick="showStandard(event)">Explorer le standard ↗</a></p></div></div>
+</div></section>
+
+<!-- FOUNDERS & TEAM -->
+<section class="sec" id="team"><div class="ctr">
+<div class="fu">
+<div class="stag" data-lang="en">Who we are</div><div class="stag" data-lang="fr">Qui nous sommes</div><div class="stag" data-lang="nl">Wie wij zijn</div>
+<div class="stit" data-lang="en">Two founders. One expert team. A complete journey.</div>
+<div class="stit" data-lang="fr">Deux fondateurs. Une équipe d'experts. Un parcours complet.</div>
+<div class="stit" data-lang="nl">Twee oprichters. Een expertteam. Een compleet traject.</div>
+<div class="sdsc" data-lang="en">AI transformation is not a technology project. It is a strategic, organisational, and human challenge, and it must be led from the top. Behind our founders stands a team of senior experts, each with 20+ years of experience in the disciplines that AI transformation demands.</div>
+<div class="sdsc" data-lang="fr">La transformation IA n'est pas un projet technologique. C'est un défi stratégique, organisationnel et humain, et il doit être piloté depuis le sommet. Derrière nos fondateurs, une équipe d'experts seniors, chacun avec plus de 20 ans d'expérience dans les disciplines que la transformation IA exige.</div>
+<div class="sdsc" data-lang="nl">AI-transformatie is geen technologieproject. Het is een strategische, organisatorische en menselijke uitdaging, en het moet van bovenaf worden geleid. Achter onze oprichters staat een team van senior experts, elk met meer dan 20 jaar ervaring in de disciplines die AI-transformatie vereist.</div>
+</div>
+<div class="frow fu">
+<div class="founder"><div class="fimg"><img src="img/Guillaume_BD_1.png" alt="Guillaume Vigneron"></div>
+<div class="frole" data-lang="en">The spark</div><div class="frole" data-lang="fr">L'étincelle</div>
+<div class="frole" data-lang="nl">De vonk</div>
+<div class="fname">Guillaume Vigneron</div>
+<div class="fdesc" data-lang="en">Guillaume has trained and advised over 1,500 C-level leaders on AI. He opens the door. Through executive briefings, keynotes, and hands-on workshops, he creates the moment of clarity that engages leadership teams. He knows the tools (ChatGPT, Claude, Copilot, Mistral, agentic AI) because he uses them every day. He separates hype from reality with evidence, not opinion. Qualiopi-certified trainer. Founder of La Super Agence. Based in France.</div>
+<div class="fdesc" data-lang="nl">Guillaume heeft meer dan 1.500 C-level leiders getraind en geadviseerd op het gebied van AI. Hij opent de deur. Via executive briefings, keynotes en praktische workshops creëert hij het moment van helderheid dat directieteams engageert. Hij kent de tools (ChatGPT, Claude, Copilot, Mistral, agentische AI) omdat hij ze dagelijks gebruikt. Hij scheidt hype van realiteit met bewijs, niet met meningen. Qualiopi-gecertificeerd trainer. Oprichter van La Super Agence. Gevestigd in Frankrijk.</div>
+<div class="fdesc" data-lang="fr">Guillaume a formé et accompagné plus de 1 500 dirigeants C-level sur l'IA. Il ouvre la porte. Par des briefings exécutifs, des conférences et des ateliers concrets, il crée le moment de clarté qui engage les équipes de direction. Il connaît les outils (ChatGPT, Claude, Copilot, Mistral, IA agentique) parce qu'il les utilise chaque jour. Il sépare le hype de la réalité avec des preuves, pas des opinions. Formateur certifié Qualiopi. Fondateur de La Super Agence. Basé en France.</div>
+</div>
+<div class="founder"><div class="fimg"><img src="img/Lydik_BD_3.png" alt="Lydik Grynfeltt"></div>
+<div class="frole" data-lang="en">The engine</div><div class="frole" data-lang="fr">Le moteur</div>
+<div class="frole" data-lang="nl">De motor</div>
+<div class="fname">Lydik Grynfeltt</div>
+<div class="fdesc" data-lang="en">Lydik has led pan-European HR transformations for over 28 years: from private-equity-backed restructurings across 10 countries to cross-border integrations spanning 7 markets simultaneously. He brings deep expertise in strategy, organisational design, change management, governance, and labour law. He created AI People Corp, the first independent standard for human-centred AI integration. Founder of HR Bridge Consulting. Executive MBA (Bayes Business School). LLM in French and European Labour Law. British-French, operating across London, Paris, and Amsterdam.</div>
+<div class="fdesc" data-lang="nl">Lydik leidt al meer dan 28 jaar pan-Europese HR-transformaties: van private equity-gedreven herstructureringen in 10 landen tot grensoverschrijdende integraties in 7 markten tegelijk. Hij brengt diepgaande expertise in strategie, organisatieontwerp, verandermanagement, governance en arbeidsrecht. Hij heeft AI People Corp gecreëerd, de eerste onafhankelijke standaard voor mensgerichte AI-integratie. Oprichter van HR Bridge Consulting. Executive MBA (Bayes Business School). LLM in Frans en Europees Arbeidsrecht. Brits-Frans, werkzaam vanuit Londen, Parijs en Amsterdam.</div>
+<div class="fdesc" data-lang="fr">Lydik pilote des transformations RH pan-européennes depuis plus de 28 ans : des restructurations adossées au private equity dans 10 pays aux intégrations cross-border sur 7 marchés simultanés. Il apporte une expertise profonde en stratégie, design organisationnel, conduite du changement, gouvernance et droit du travail. Il a créé AI People Corp, le premier standard indépendant pour l'intégration humaine de l'IA. Fondateur de HR Bridge Consulting. Executive MBA (Bayes Business School). LLM en droit du travail français et européen. Franco-britannique, opérant entre Londres, Paris et Amsterdam.</div>
+</div>
+</div>
+<div class="ftog fu"><span data-lang="en"><strong>Guillaume is the spark that opens eyes. Lydik is the engine that transforms organisations.</strong> When they sit in front of your leadership team, you have the AI expertise and the organisational depth in the same room. That combination does not exist elsewhere in the market.</span><span data-lang="nl"><strong>Guillaume is de vonk die ogen opent. Lydik is de motor die organisaties transformeert.</strong> Wanneer zij tegenover uw directieteam zitten, heeft u de AI-expertise en de organisatorische diepgang in dezelfde ruimte. Die combinatie bestaat nergens anders in de markt.</span><span data-lang="fr"><strong>Guillaume est l'étincelle qui ouvre les yeux. Lydik est le moteur qui transforme les organisations.</strong> Quand ils sont en face de votre équipe de direction, vous avez l'expertise IA et la profondeur organisationnelle dans la même pièce. Cette combinaison n'existe nulle part ailleurs sur le marché.</span></div>
+<div class="tintro fu"><span data-lang="en">Powered by <a href="https://hrbridgeconsulting.com" target="_blank" style="color:var(--charcoal);font-weight:700;text-decoration:underline">HR Bridge Consulting</a>, a boutique consultancy with over a decade of pan-European HR transformation experience. The team behind Guillaume and Lydik is not assembled on demand. These are senior professionals who have worked together on real engagements across Europe.</span><span data-lang="fr">Porté par <a href="https://hrbridgeconsulting.com" target="_blank" style="color:var(--charcoal);font-weight:700;text-decoration:underline">HR Bridge Consulting</a>, un cabinet boutique avec plus d'une décennie d'expérience en transformation RH pan-européenne. L'équipe derrière Guillaume et Lydik n'est pas assemblée à la demande. Ce sont des professionnels seniors qui ont travaillé ensemble sur des missions réelles à travers l'Europe.</span><span data-lang="nl">Aangedreven door <a href="https://hrbridgeconsulting.com" target="_blank" style="color:var(--charcoal);font-weight:700;text-decoration:underline">HR Bridge Consulting</a>, een boutique-adviesbureau met meer dan tien jaar ervaring in pan-Europese HR-transformatie. Het team achter Guillaume en Lydik wordt niet ad hoc samengesteld. Het zijn senior professionals die samen hebben gewerkt aan echte opdrachten door heel Europa.</span></div>
+<div class="tgrid fu">
+<div class="tmem"><div class="timg"><img src="img/sabine.jpg" alt="Sabine Marcellin"></div><div class="tn">Sabine Marcellin</div><div class="ts">AI Act · Cyber · GDPR</div><div class="tb" data-lang="en">Cybersecurity, data protection, and AI regulatory compliance. Expert on the EU AI Act and the legal frameworks governing AI in the workplace.</div><div class="tb" data-lang="fr">Cybersécurité, protection des données et conformité réglementaire IA. Experte de l'EU AI Act et des cadres juridiques régissant l'IA en entreprise.</div>
+<div class="tb" data-lang="nl">Cybersecurity, gegevensbescherming en AI-regelgevingscompliancy. Expert op het gebied van de EU AI Act en de juridische kaders voor AI op de werkplek.</div></div>
+<div class="tmem"><div class="timg"><img src="img/benoit.jpg" alt="Benoit Montet"></div><div class="tn">Benoit Montet</div><div class="ts" data-lang="en">Netherlands · Cross-border</div><div class="ts" data-lang="fr">Pays-Bas · Cross-border</div>
+<div class="ts" data-lang="nl">Nederland · Cross-border</div><div class="tb" data-lang="en">Senior Partner based in Amsterdam. 25+ years in cross-border HR strategy. Deep expertise in Dutch labour law and works council dynamics.</div><div class="tb" data-lang="fr">Senior Partner basé à Amsterdam. Plus de 25 ans en stratégie RH cross-border. Expertise approfondie en droit du travail néerlandais et dynamiques de comités d'entreprise.</div>
+<div class="tb" data-lang="nl">Senior Partner gevestigd in Amsterdam. 25+ jaar ervaring in grensoverschrijdende HR-strategie. Diepgaande expertise in Nederlands arbeidsrecht en dynamiek van ondernemingsraden.</div></div>
+<div class="tmem"><div class="timg"><img src="img/philippe.png" alt="Philippe Mollaret"></div><div class="tn">Philippe Mollaret</div><div class="ts" data-lang="en">Org design · Restructuring</div><div class="ts" data-lang="fr">Organisation · Restructuration</div>
+<div class="ts" data-lang="nl">Organisatie · Herstructurering</div><div class="tb" data-lang="en">Organisational design, restructuring, and transformation programme management. Has led complex multi-country change programmes.</div><div class="tb" data-lang="fr">Design organisationnel, restructuration et direction de programmes de transformation. A dirigé des programmes de changement multi-pays complexes.</div>
+<div class="tb" data-lang="nl">Organisatieontwerp, herstructurering en management van transformatieprogramma's. Heeft complexe multi-landveranderingsprogramma's geleid.</div></div>
+<div class="tmem"><div class="timg ph">+</div><div class="tn" data-lang="en">More experts</div><div class="tn" data-lang="fr">Autres experts</div>
+<div class="tn" data-lang="nl">Meer experts</div><div class="ts">Laurent · Xavier · Sarah · Cédric</div><div class="tb" data-lang="en">Additional senior HRBC partners contributing specialist expertise across markets and disciplines.</div><div class="tb" data-lang="fr">Partenaires seniors HRBC supplémentaires apportant une expertise spécialiste sur différents marchés et disciplines.</div>
+<div class="tb" data-lang="nl">Extra senior HRBC-partners die specialistische expertise inbrengen op verschillende markten en disciplines.</div></div>
+</div>
+<div class="wtm fu"><span data-lang="en">AI integration touches strategy, operations, governance, people, skills, communication, legal, and security simultaneously. No single consultant covers all of that. No junior team can navigate it. Mentat Partners brings a team where every member has 20+ years of experience in their discipline.</span><span data-lang="fr">L'intégration IA touche simultanément la stratégie, les opérations, la gouvernance, les personnes, les compétences, la communication, le juridique et la sécurité. Aucun consultant seul ne couvre tout cela. Aucune équipe de juniors ne peut le naviguer. Mentat Partners réunit une équipe où chaque membre a plus de 20 ans d'expérience dans sa discipline.</span><span data-lang="nl">AI-integratie raakt tegelijkertijd strategie, operaties, governance, mensen, competenties, communicatie, juridische zaken en beveiliging. Geen enkele consultant dekt dat allemaal. Geen juniorteam kan dat navigeren. Mentat Partners brengt een team samen waarin elk lid meer dan 20 jaar ervaring heeft in zijn discipline.</span></div>
+<div class="prins fu">
+<div class="prin"><div class="prl">Senior-only</div><div class="prv" data-lang="en">20+ years each</div><div class="prv" data-lang="fr">20+ ans chacun</div>
+<div class="prv" data-lang="nl">20+ jaar elk</div></div>
+<div class="prin"><div class="prl" data-lang="en">Practitioners</div><div class="prl" data-lang="fr">Praticiens</div>
+<div class="prl" data-lang="nl">Praktijkmensen</div><div class="prv" data-lang="en">We use AI every day</div><div class="prv" data-lang="fr">Nous utilisons l'IA au quotidien</div>
+<div class="prv" data-lang="nl">Wij gebruiken AI dagelijks</div></div>
+<div class="prin"><div class="prl" data-lang="en">Independent</div><div class="prl" data-lang="fr">Indépendants</div>
+<div class="prl" data-lang="nl">Onafhankelijk</div><div class="prv" data-lang="en">No vendor ties</div><div class="prv" data-lang="fr">Aucun partenariat éditeur</div>
+<div class="prv" data-lang="nl">Geen leveranciersrelaties</div></div>
+<div class="prin"><div class="prl">Cross-border</div><div class="prv">FR · UK · NL</div></div>
+</div>
+</div></section>
+
+<!-- CONTACT -->
+<section class="sec sec-a" id="contact"><div class="ctr">
+<div class="cwrap fu">
+<h2 data-lang="en">Most engagements start with a conversation.</h2>
+<h2 data-lang="fr">La plupart de nos missions commencent par une conversation.</h2>
+<h2 data-lang="nl">De meeste opdrachten beginnen met een gesprek.</h2>
+<p data-lang="en">No pitch deck. No sales process. Just a conversation about where you are and where you want to be. If AI is on your leadership team's agenda, or should be, we'd be glad to talk.</p>
+<p data-lang="fr">Pas de pitch deck. Pas de processus commercial. Juste une conversation sur où vous en êtes et où vous voulez aller. Si l'IA est à l'ordre du jour de votre direction, ou devrait l'être, nous serions ravis d'en parler.</p>
+<p data-lang="nl">Geen pitch deck. Geen verkoopproces. Gewoon een gesprek over waar u staat en waar u naartoe wilt. Als AI op de agenda van uw directie staat, of zou moeten staan, praten wij graag met u.</p>
+<form class="cform" onsubmit="return false">
+<input type="text" placeholder="Name / Nom" required>
+<input type="text" placeholder="Company / Entreprise">
+<input type="email" class="full" placeholder="Email" required>
+<textarea class="full" placeholder="Your message / Votre message" rows="3"></textarea>
+<div class="full" style="text-align:center;margin-top:4px">
+<button type="submit" class="btn btn-p" data-lang="en">Start a conversation</button>
+<button type="submit" class="btn btn-p" data-lang="fr">Commençons</button>
+<button type="submit" class="btn btn-p" data-lang="nl">Laten we beginnen</button>
+</div>
+</form>
+<div class="ceml"><span data-lang="en">Or write to us directly:</span><span data-lang="fr">Ou écrivez-nous directement :</span><span data-lang="nl">Of schrijf ons direct:</span><br>Lydik Grynfeltt: lydik.grynfeltt@hrbridgeconsulting.com</div>
+<div class="cloc">London · Paris · Amsterdam</div>
+</div>
+</div></section>
+
+</main>
+
+<!-- STANDARD PAGE -->
+<main class="sp" id="sp">
+<section class="shero"><div class="ctr" style="display:flex;align-items:center;width:100%;position:relative">
+<div class="shero-c">
+<div style="margin-bottom:16px"><a href="#" onclick="goHome(event)" style="font-size:14px;font-weight:600">← <span data-lang="en">Back to home</span><span data-lang="fr">Retour à l'accueil</span><span data-lang="nl">Terug naar home</span></a></div>
+<div style="font-size:28px;font-weight:800;color:var(--amber);margin-bottom:8px;letter-spacing:1px">AI People Corp</div>
+<div class="stit" data-lang="en">Built on a standard. Not on opinions.</div>
+<div class="stit" data-lang="fr">Fondé sur un standard. Pas sur des opinions.</div>
+<div class="stit" data-lang="nl">Gebouwd op een standaard. Niet op meningen.</div>
+<p style="font-size:17px;color:var(--grey);line-height:1.7;max-width:520px" data-lang="en">Our methodology is anchored in AI People Corp, the first independent standard for human-centred AI integration. We didn't adopt it from the outside. We created it. Because no one else had.</p>
+<p style="font-size:17px;color:var(--grey);line-height:1.7;max-width:520px" data-lang="fr">Notre méthodologie repose sur AI People Corp, le premier standard indépendant pour l'intégration humaine de l'IA. Nous ne l'avons pas adopté de l'extérieur. Nous l'avons créé. Parce que personne d'autre ne l'avait fait.</p>
+<p style="font-size:17px;color:var(--grey);line-height:1.7;max-width:520px" data-lang="nl">Onze methodologie is verankerd in AI People Corp, de eerste onafhankelijke standaard voor mensgerichte AI-integratie. Wij hebben het niet van buitenaf overgenomen. Wij hebben het gecreëerd. Omdat niemand anders dat had gedaan.</p>
+</div></div>
+<div class="shero-img" style="display:flex;align-items:center;justify-content:center;background:transparent"><a href="https://aipeoplecorp.org" target="_blank" style="display:block"><img src="img/AI_People_Corp_Logo_White.png" alt="AI People Corp" style="width:300px;height:auto;opacity:0.85;filter:drop-shadow(0 4px 20px rgba(176,112,32,0.15));transition:opacity 0.3s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'"></a></div>
+</section>
+
+<section class="sec sec-a"><div class="ctr">
+<div class="intro-boxes" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:48px">
+<div style="background:var(--white);border-radius:14px;padding:28px;border:1px solid var(--border)">
+<div style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-lang="en">What is AI People Corp?</div>
+<div style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-lang="fr">Qu'est-ce qu'AI People Corp ?</div>
+<div style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-lang="nl">Wat is AI People Corp?</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7" data-lang="en">AI People Corp defines seven dimensions and four maturity levels that together describe what it means for an organisation to integrate AI responsibly and effectively from a human perspective. It is not a compliance checklist. It is a measurement framework that tells an organisation exactly where it stands, where its gaps are, and what to prioritise.</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7" data-lang="fr">AI People Corp définit sept dimensions et quatre niveaux de maturité qui décrivent ensemble ce que signifie intégrer l'IA de manière responsable et efficace du point de vue humain. Ce n'est pas une checklist de conformité. C'est un cadre de mesure qui dit à une organisation exactement où elle en est, où sont ses lacunes, et quoi prioriser.</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7" data-lang="nl">AI People Corp definieert zeven dimensies en vier volwassenheidsniveaus die samen beschrijven wat het betekent om AI verantwoord en effectief te integreren vanuit menselijk perspectief. Het is geen compliance-checklist. Het is een meetkader dat een organisatie precies vertelt waar zij staat, waar de hiaten zitten, en wat te prioriteren.</div>
+</div>
+<div style="background:var(--white);border-radius:14px;padding:28px;border:1px solid var(--border)">
+<div style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-lang="en">Why a standard matters</div>
+<div style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-lang="fr">Pourquoi un standard</div>
+<div style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px" data-lang="nl">Waarom een standaard</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7;margin-bottom:12px" data-lang="en">Organisations that successfully integrate AI share common traits: their leadership is aligned, their workforce is engaged, their governance is built before deployment, and they measure progress continuously.</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7;margin-bottom:12px" data-lang="nl">Organisaties die AI succesvol integreren delen gemeenschappelijke kenmerken: hun leiderschap is afgestemd, hun medewerkers zijn betrokken, hun governance is opgebouwd vóór implementatie, en zij meten voortgang continu.</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7;margin-bottom:12px" data-lang="fr">Les organisations qui intègrent l'IA avec succès partagent des traits communs : leur direction est alignée, leurs équipes sont engagées, leur gouvernance est construite avant le déploiement, et elles mesurent les progrès en continu.</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7" data-lang="en">AI People Corp captures these success factors into a structured, repeatable framework, the first standard to address AI integration from the human perspective, not the technology perspective.</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7" data-lang="nl">AI People Corp vangt deze succesfactoren in een gestructureerd, herhaalbaar kader, de eerste standaard die AI-integratie benadert vanuit het menselijk perspectief, niet vanuit het technologisch perspectief.</div>
+<div style="font-size:15px;color:var(--grey);line-height:1.7" data-lang="fr">AI People Corp capture ces facteurs de succès dans un cadre structuré et répétable, le premier standard à aborder l'intégration IA du point de vue humain, pas du point de vue technologique.</div>
+</div>
+</div>
+<div class="stag" data-lang="en">The seven dimensions</div><div class="stag" data-lang="fr">Les sept dimensions</div><div class="stag" data-lang="nl">De zeven dimensies</div>
+<p style="font-size:16px;color:var(--grey);line-height:1.7;margin:12px 0 24px;max-width:780px" data-lang="en">The seven dimensions cover the full scope of what an organisation must address when AI enters the operating model, the workforce, and the leadership agenda. They are not seven independent topics. They are seven lenses on the same transformation: interconnected, interdependent, and measured together to reveal the complete picture of an organisation's AI readiness.</p>
+<p style="font-size:16px;color:var(--grey);line-height:1.7;margin:12px 0 24px;max-width:780px" data-lang="nl">De zeven dimensies bestrijken de volledige reikwijdte van wat een organisatie moet adresseren wanneer AI het operationeel model, de medewerkers en de leiderschapsagenda binnenkomt. Het zijn geen zeven onafhankelijke onderwerpen. Het zijn zeven lenzen op dezelfde transformatie: onderling verbonden, wederzijds afhankelijk, en samen gemeten om het complete beeld van de AI-gereedheid van een organisatie te onthullen.</p>
+<p style="font-size:16px;color:var(--grey);line-height:1.7;margin:12px 0 24px;max-width:780px" data-lang="fr">Les sept dimensions couvrent l'ensemble de ce qu'une organisation doit adresser quand l'IA entre dans le modèle opérationnel, les effectifs et l'agenda de la direction. Ce ne sont pas sept sujets indépendants. Ce sont sept angles sur la même transformation : interconnectés, interdépendants, et mesurés ensemble pour révéler l'image complète de la maturité IA d'une organisation.</p>
+<div class="dgrid" style="margin-top:16px">
+<div class="ditem"><div class="dnum">1</div><div class="dtxt"><strong data-lang="en">AI Purpose & Journey Narrative</strong><strong data-lang="fr">Narratif et raison d'être IA</strong><strong data-lang="nl">AI-doel & Reisverhaal</strong><span data-lang="en">Does your organisation have a clear story about why it is integrating AI and what that means for its people?</span><span data-lang="fr">Votre organisation a-t-elle une histoire claire sur pourquoi elle intègre l'IA et ce que cela signifie pour ses collaborateurs ?</span><span data-lang="nl">Heeft uw organisatie een helder verhaal over waarom zij AI integreert en wat dat betekent voor haar medewerkers?</span></div></div>
+<div class="ditem"><div class="dnum">2</div><div class="dtxt"><strong data-lang="en">Leadership Posture</strong><strong data-lang="fr">Posture du leadership</strong><strong data-lang="nl">Leiderschapshouding</strong><span data-lang="en">How does your leadership team actually engage with AI? Not what they say, but how they think.</span><span data-lang="fr">Comment votre équipe de direction s'engage-t-elle réellement avec l'IA ? Pas ce qu'elle dit, mais comment elle pense.</span><span data-lang="nl">Hoe gaat uw directieteam werkelijk om met AI? Niet wat zij zeggen, maar hoe zij denken.</span></div></div>
+<div class="ditem"><div class="dnum">3</div><div class="dtxt"><strong data-lang="en">Workforce Readiness & Sentiment</strong><strong data-lang="fr">Préparation et sentiment des collaborateurs</strong><strong data-lang="nl">Gereedheid & Sentiment Medewerkers</strong><span data-lang="en">How do your employees experience the AI journey? Do you even know?</span><span data-lang="fr">Comment vos employés vivent-ils le parcours IA ? Le savez-vous seulement ?</span><span data-lang="nl">Hoe ervaren uw medewerkers het AI-traject? Weet u het überhaupt?</span></div></div>
+<div class="ditem"><div class="dnum">4</div><div class="dtxt"><strong data-lang="en">Governance & Social Dialogue</strong><strong data-lang="fr">Gouvernance et dialogue social</strong><strong data-lang="nl">Governance & Sociale Dialoog</strong><span data-lang="en">Do you have the governance architecture to manage AI responsibly? Have you engaged your social partners?</span><span data-lang="fr">Avez-vous l'architecture de gouvernance pour gérer l'IA de manière responsable ? Avez-vous impliqué vos partenaires sociaux ?</span><span data-lang="nl">Heeft u de governance-architectuur om AI verantwoord te beheren? Heeft u uw sociale partners betrokken?</span></div></div>
+<div class="ditem"><div class="dnum">5</div><div class="dtxt"><strong data-lang="en">Operational Integration</strong><strong data-lang="fr">Intégration opérationnelle</strong><strong data-lang="nl">Operationele Integratie</strong><span data-lang="en">How is AI actually being used in your organisation? How much of it is visible and governed?</span><span data-lang="fr">Comment l'IA est-elle réellement utilisée dans votre organisation ? Quelle part est visible et encadrée ?</span><span data-lang="nl">Hoe wordt AI daadwerkelijk gebruikt in uw organisatie? Hoeveel daarvan is zichtbaar en bestuurd?</span></div></div>
+<div class="ditem"><div class="dnum">6</div><div class="dtxt"><strong data-lang="en">Skills & Capability Development</strong><strong data-lang="fr">Développement des compétences</strong><strong data-lang="nl">Vaardigheden & Capaciteiten</strong><span data-lang="en">Are you building the human capabilities needed to work with AI, at every level?</span><span data-lang="fr">Construisez-vous les capacités humaines nécessaires pour travailler avec l'IA, à chaque niveau ?</span><span data-lang="nl">Bouwt u de menselijke capaciteiten op die nodig zijn om met AI te werken, op elk niveau?</span></div></div>
+<div class="ditem sf"><div class="dnum">7</div><div class="dtxt"><strong data-lang="en">Ethical & Sustainability Framework</strong><strong data-lang="fr">Cadre éthique et de durabilité</strong><strong data-lang="nl">Ethisch & Duurzaamheidskader</strong><span data-lang="en">Do you have an ethical framework that goes beyond compliance statements?</span><span data-lang="fr">Avez-vous un cadre éthique qui va au-delà des déclarations de conformité ?</span><span data-lang="nl">Heeft u een ethisch kader dat verder gaat dan compliance-verklaringen?</span></div></div>
+</div>
+
+<div style="margin:48px 0;border-radius:16px;overflow:hidden">
+<img src="img/MP_Board_Image2.png" alt="Mentat Partners" style="width:100%;height:auto;display:block">
+</div>
+
+<div class="stag" data-lang="en">The four maturity levels</div><div class="stag" data-lang="fr">Les quatre niveaux de maturité</div><div class="stag" data-lang="nl">De vier volwassenheidsniveaus</div>
+<p style="font-size:16px;color:var(--grey);line-height:1.7;margin:12px 0 24px;max-width:780px" data-lang="en">Every dimension is scored across four maturity levels that describe a progression from initial recognition to full organisational integration. An organisation may be at Level 3 on leadership posture and Level 1 on workforce sentiment. The diagnostic power of the standard lies precisely in surfacing these asymmetries.</p>
+<p style="font-size:16px;color:var(--grey);line-height:1.7;margin:12px 0 24px;max-width:780px" data-lang="nl">Elke dimensie wordt gescoord op vier volwassenheidsniveaus die een progressie beschrijven van eerste herkenning tot volledige organisatorische integratie. Een organisatie kan op Niveau 3 zitten voor leiderschapshouding en op Niveau 1 voor medewerkerssentiment. De diagnostische kracht van de standaard ligt precies in het blootleggen van deze asymmetrieën.</p>
+<p style="font-size:16px;color:var(--grey);line-height:1.7;margin:12px 0 24px;max-width:780px" data-lang="fr">Chaque dimension est évaluée sur quatre niveaux de maturité qui décrivent une progression de la prise de conscience initiale jusqu'à l'intégration organisationnelle complète. Une organisation peut être au Niveau 3 sur la posture du leadership et au Niveau 1 sur le sentiment des collaborateurs. La puissance diagnostique du standard réside précisément dans la mise en lumière de ces asymétries.</p>
+<div class="lvbar" style="margin-top:16px">
+<div class="lv lv1"><div class="lvn">Level 1</div><div class="lvt" data-lang="en">Awareness</div><div class="lvt" data-lang="fr">Prise de conscience</div><div class="lvt" data-lang="nl">Bewustwording</div><div class="lvd" data-lang="en">The organisation recognises that AI has a human dimension</div><div class="lvd" data-lang="fr">L'organisation reconnaît que l'IA a une dimension humaine</div><div class="lvd" data-lang="nl">De menselijke dimensie van AI is erkend</div></div>
+<div class="lv lv2"><div class="lvn">Level 2</div><div class="lvt" data-lang="en">Alignment</div><div class="lvt" data-lang="fr">Alignement</div><div class="lvt" data-lang="nl">Afstemming</div><div class="lvd" data-lang="en">The leadership team has a shared posture and strategy</div><div class="lvd" data-lang="fr">L'équipe de direction a une posture et une stratégie partagées</div><div class="lvd" data-lang="nl">Het directieteam heeft een gedeelde houding en strategie</div></div>
+<div class="lv lv3"><div class="lvn">Level 3</div><div class="lvt" data-lang="en">Activation</div><div class="lvt" data-lang="fr">Activation</div><div class="lvt" data-lang="nl">Activering</div><div class="lvd" data-lang="en">Programmes running, measurement exists, middle management engaged</div><div class="lvd" data-lang="fr">Programmes actifs, mesure en place, management intermédiaire impliqué</div><div class="lvd" data-lang="nl">Programma's draaien, meting is aanwezig, middenmanagement betrokken</div></div>
+<div class="lv lv4"><div class="lvn">Level 4</div><div class="lvt" data-lang="en">Integration</div><div class="lvt" data-lang="fr">Intégration</div><div class="lvt" data-lang="nl">Integratie</div><div class="lvd" data-lang="en">Embedded, self-sustaining, continuously measured</div><div class="lvd" data-lang="fr">Ancrée, autonome, mesurée en continu</div><div class="lvd" data-lang="nl">Verankerd, zelfstandig, continu gemeten</div></div>
+</div>
+<div style="text-align:center;padding:48px 40px;background:var(--amber-bg-light);border-radius:16px;margin-top:16px">
+<p style="font-size:22px;font-weight:700;color:var(--charcoal);margin-bottom:12px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.5" data-lang="en">When you work with Mentat Partners, every diagnostic, every workshop, every measurement maps to these seven dimensions.</p>
+<p style="font-size:22px;font-weight:700;color:var(--charcoal);margin-bottom:12px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.5" data-lang="fr">Quand vous travaillez avec Mentat Partners, chaque diagnostic, chaque atelier, chaque mesure est rattachée à ces sept dimensions.</p>
+<p style="font-size:22px;font-weight:700;color:var(--charcoal);margin-bottom:12px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.5" data-lang="nl">Wanneer u met Mentat Partners werkt, is elke diagnose, elke workshop, elke meting gekoppeld aan deze zeven dimensies.</p>
+<p style="font-size:20px;color:var(--amber-dark);margin-bottom:28px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.5;font-weight:600" data-lang="en">You don't get a consultant's opinion. You get a structured, measurable, repeatable assessment anchored in an independent standard.</p>
+<p style="font-size:20px;color:var(--amber-dark);margin-bottom:28px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.5;font-weight:600" data-lang="fr">Vous n'obtenez pas l'opinion d'un consultant. Vous obtenez une évaluation structurée, mesurable et répétable, ancrée dans un standard indépendant.</p>
+<p style="font-size:20px;color:var(--amber-dark);margin-bottom:28px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.5;font-weight:600" data-lang="nl">U krijgt niet de mening van een consultant. U krijgt een gestructureerde, meetbare, herhaalbare beoordeling verankerd in een onafhankelijke standaard.</p>
+<a href="https://aipeoplecorp.org" target="_blank" style="display:inline-block;margin-bottom:20px"><img src="img/AI_People_Corp_Logo_White.png" alt="AI People Corp" style="width:140px;height:auto;opacity:0.85;transition:opacity 0.3s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'"></a><br>
+<a href="https://aipeoplecorp.org" target="_blank" class="btn btn-p" data-lang="en">Learn more at aipeoplecorp.org →</a>
+<a href="https://aipeoplecorp.org" target="_blank" class="btn btn-p" data-lang="fr">En savoir plus sur aipeoplecorp.org →</a>
+<a href="https://aipeoplecorp.org" target="_blank" class="btn btn-p" data-lang="nl">Meer informatie op aipeoplecorp.org →</a>
+</div>
+</div></section>
+</main>
+
+<footer class="foot"><div class="ctr"><div class="foot-in"><span>© 2026 Mentat Partners · HR Bridge Consulting · AI People Corp</span><span data-lang="en">London · Paris · Amsterdam</span><span data-lang="fr">Londres · Paris · Amsterdam</span><span data-lang="nl">Londen · Parijs · Amsterdam</span></div></div></footer>
+
+<script>
+function toggleLang(){var b=document.body,btn=document.querySelector('.lbtn');if(b.classList.contains('nl')){b.classList.remove('nl');btn.textContent='EN | FR | NL'}else if(b.classList.contains('fr')){b.classList.remove('fr');b.classList.add('nl');btn.textContent='NL | EN | FR'}else{b.classList.add('fr');btn.textContent='FR | NL | EN'}}
+function showStandard(e){if(e)e.preventDefault();document.getElementById('hp').classList.add('hidden');document.getElementById('sp').classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function goHome(e){if(e)e.preventDefault();document.getElementById('hp').classList.remove('hidden');document.getElementById('sp').classList.remove('active');if(e)window.scrollTo({top:0,behavior:'smooth'})}
+!function(){var cx=200,cy=165,R=125,N=7,L=['Narrative','Leadership','Workforce','Governance','Operations','Skills','Ethics'],D=[.85,.7,.4,.55,.65,.45,.5];function p(a,r){var x=a-Math.PI/2;return[cx+r*Math.cos(x),cy+r*Math.sin(x)]}function pp(r){return Array.from({length:N},function(_,i){return p(2*Math.PI*i/N,r).join(',')}).join(' ')}[1,.75,.5,.25].forEach(function(s,i){var e=document.getElementById('r'+(4-i));if(e)e.setAttribute('points',pp(R*s))});var ax=document.getElementById('ax');for(var i=0;i<N;i++){var a=2*Math.PI*i/N,xy=p(a,R),l=document.createElementNS('http://www.w3.org/2000/svg','line');l.setAttribute('x1',cx);l.setAttribute('y1',cy);l.setAttribute('x2',xy[0]);l.setAttribute('y2',xy[1]);ax.appendChild(l)}var dp=D.map(function(d,i){return p(2*Math.PI*i/N,R*d)});document.getElementById('ds').setAttribute('points',dp.map(function(x){return x.join(',')}).join(' '));var dd=document.getElementById('dd');dp.forEach(function(xy){var c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',xy[0]);c.setAttribute('cy',xy[1]);c.setAttribute('r',4);c.setAttribute('fill','#B07020');dd.appendChild(c)});var rl=document.getElementById('rl');L.forEach(function(lb,i){var a=2*Math.PI*i/N,xy=p(a,R+20),t=document.createElementNS('http://www.w3.org/2000/svg','text');t.setAttribute('x',xy[0]);t.setAttribute('y',xy[1]);t.setAttribute('text-anchor','middle');t.setAttribute('dominant-baseline','middle');t.textContent=lb;rl.appendChild(t)})}();
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('.fu').forEach(function(el){obs.observe(el)});
+</script>
+</body>
+</html>
